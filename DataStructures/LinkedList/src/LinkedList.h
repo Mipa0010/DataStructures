@@ -113,6 +113,10 @@ public:
 		return head;
 	}
 
+	/*
+		GetLast() doesnt work as intended.
+		Need to discover a way to find the last item in the list
+	*/
 	const T& GetLast() const
 	{
 		return last;
