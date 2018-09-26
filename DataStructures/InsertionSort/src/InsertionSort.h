@@ -1,10 +1,8 @@
 #pragma once
 
-#include <iostream>
-
 void InsertionSort(int* arr, int count)
 {
-	for (int i = 1; i <= count - 1; i++)
+	for (int i = 1; i < count; i++)
 	{
 		int s = i;
 
@@ -13,8 +11,6 @@ void InsertionSort(int* arr, int count)
 			int tmp = arr[s];
 			arr[s] = arr[s - 1];
 			arr[s - 1] = tmp;
-
-			std::cout << std::endl;
 
 			s--;
 		}
