@@ -11,7 +11,7 @@ void InsertionSort(int* arr, int count)
 			int tmp = arr[s];
 			arr[s] = arr[s - 1];
 			arr[s - 1] = tmp;
-
+			float n = 5;
 			s--;
 		}
 	}

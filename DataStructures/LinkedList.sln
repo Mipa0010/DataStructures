@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SelectionSort", "SelectionS
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "InsertionSort", "InsertionSort\InsertionSort.vcxproj", "{86A6B551-2385-4A30-8299-69A2677598A3}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CircularBuffer", "CircularBuffer\CircularBuffer.vcxproj", "{71E7EB04-F400-44ED-B4AF-373967BCAE3B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -51,6 +53,14 @@ Global
 		{86A6B551-2385-4A30-8299-69A2677598A3}.Release|x64.Build.0 = Release|x64
 		{86A6B551-2385-4A30-8299-69A2677598A3}.Release|x86.ActiveCfg = Release|Win32
 		{86A6B551-2385-4A30-8299-69A2677598A3}.Release|x86.Build.0 = Release|Win32
+		{71E7EB04-F400-44ED-B4AF-373967BCAE3B}.Debug|x64.ActiveCfg = Debug|x64
+		{71E7EB04-F400-44ED-B4AF-373967BCAE3B}.Debug|x64.Build.0 = Debug|x64
+		{71E7EB04-F400-44ED-B4AF-373967BCAE3B}.Debug|x86.ActiveCfg = Debug|Win32
+		{71E7EB04-F400-44ED-B4AF-373967BCAE3B}.Debug|x86.Build.0 = Debug|Win32
+		{71E7EB04-F400-44ED-B4AF-373967BCAE3B}.Release|x64.ActiveCfg = Release|x64
+		{71E7EB04-F400-44ED-B4AF-373967BCAE3B}.Release|x64.Build.0 = Release|x64
+		{71E7EB04-F400-44ED-B4AF-373967BCAE3B}.Release|x86.ActiveCfg = Release|Win32
+		{71E7EB04-F400-44ED-B4AF-373967BCAE3B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
