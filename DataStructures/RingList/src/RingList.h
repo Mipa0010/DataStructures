@@ -14,7 +14,7 @@ public:
 private:
 };
 
-template<typename T> class CircularBuffer
+template<typename T> class RingList
 {
 public:
 	ListItem<T>* last;
@@ -23,12 +23,12 @@ public:
 		return (last != NULL ? last->next : NULL);
 	}
 
-	CircularBuffer()
+	RingList()
 	{
 		last = NULL;
 	}
 	
-	CircularBuffer(CircularBuffer<T> &src, int i1, int i2)
+	RingList(RingList<T> &src, int i1, int i2)
 	{
 		//We shouldn't assume that the user knows what they want to include from the previous Circular buffer
 		ListItem<T>* it1 = src.GetItem(i1 - 1);
