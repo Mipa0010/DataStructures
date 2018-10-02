@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2009
+VisualStudioVersion = 15.0.27130.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LinkedList", "LinkedList\LinkedList.vcxproj", "{BDAFDB96-8D23-4FCA-9655-0B63AD4C6FB2}"
 EndProject
@@ -16,6 +16,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RingBuffer", "RingBuffer\RingBuffer.vcxproj", "{0009F631-72DE-4727-8EF6-8D535FCC46E9}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TowerOfHanoiSolver", "TowerOfHanoiSolver\TowerOfHanoiSolver.vcxproj", "{360A227D-30AF-4B4E-8D0E-2837C5769544}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MergeSort", "MergeSort\MergeSort.vcxproj", "{0F6787E6-BA54-4E80-9A43-CA23F8EEEA0F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,14 @@ Global
 		{360A227D-30AF-4B4E-8D0E-2837C5769544}.Release|x64.Build.0 = Release|x64
 		{360A227D-30AF-4B4E-8D0E-2837C5769544}.Release|x86.ActiveCfg = Release|Win32
 		{360A227D-30AF-4B4E-8D0E-2837C5769544}.Release|x86.Build.0 = Release|Win32
+		{0F6787E6-BA54-4E80-9A43-CA23F8EEEA0F}.Debug|x64.ActiveCfg = Debug|x64
+		{0F6787E6-BA54-4E80-9A43-CA23F8EEEA0F}.Debug|x64.Build.0 = Debug|x64
+		{0F6787E6-BA54-4E80-9A43-CA23F8EEEA0F}.Debug|x86.ActiveCfg = Debug|Win32
+		{0F6787E6-BA54-4E80-9A43-CA23F8EEEA0F}.Debug|x86.Build.0 = Debug|Win32
+		{0F6787E6-BA54-4E80-9A43-CA23F8EEEA0F}.Release|x64.ActiveCfg = Release|x64
+		{0F6787E6-BA54-4E80-9A43-CA23F8EEEA0F}.Release|x64.Build.0 = Release|x64
+		{0F6787E6-BA54-4E80-9A43-CA23F8EEEA0F}.Release|x86.ActiveCfg = Release|Win32
+		{0F6787E6-BA54-4E80-9A43-CA23F8EEEA0F}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
