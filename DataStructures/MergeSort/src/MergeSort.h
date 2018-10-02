@@ -1,64 +1,63 @@
 #pragma once
 #include <iostream>
 
-void MergeSort(int* array1, int length)
+void MergeSort(int* array1, int length, int* x= NULL)
 {
-	/*std::cout << "===========" << std::endl;
-	std::cout << "Length: " << length << std::endl;
-	for (int i = 0; i < length; i++)
-	{
-		std::cout << array1[i];
-		if (i < length - 1)
-		{
-			std::cout << ", ";
-		}
-	}
-	std::cout << std::endl;*/
-
 	if (length <= 1)
 		return;
 
-	int len1, len2;
-
-	if ((length % 2 == 0))
+	int* extraWorkSpace = x;
+	if (extraWorkSpace == NULL)
 	{
-		len1 = length / 2;
-		len2 = len1;
-	}
-	else
-	{
-		len1 = (length - 1) / 2;
-		len2 = len1 + 1;
-
+		extraWorkSpace = new int[length];
 	}
 
-	int* arr1 = &(array1[0]);
-	int* arr2 = &(array1[len1]);
+	int len1 = length / 2;
+	int len2 = length - len1;
 
-	MergeSort(arr1, len1);
-	MergeSort(arr2, len2);
+	int* a1 = array1;
+	int* a2 = array1 + len1;
 
+	MergeSort(a1, len1, extraWorkSpace);
+	MergeSort(a2, len2, extraWorkSpace);
 
-	//Trash
-	int index1 = 0;
-	int index2 = 0;
+	int firstArrayIndex = 0;
+	int secondArrayIndex = 0;
 
 	for (int i = 0; i < length; i++)
 	{
-		std::cout << arr1[index1] << " < " << arr2[index2];
-		if (arr1[index1] < arr2[index2])
+		if (firstArrayIndex >= len1)
 		{
-			array1[i] = arr1[index1];
-			index1++;
-
-			std::cout << " = " << arr1[index1] << std::endl;
+			extraWorkSpace[i] = a2[secondArrayIndex];
+			secondArrayIndex++;
+		}
+		else if (secondArrayIndex >= len2)
+		{
+			extraWorkSpace[i] = a1[firstArrayIndex];
+			firstArrayIndex++;
 		}
 		else
 		{
-			array1[i] = arr2[index2];
-			index2++;
-
-			std::cout << " = " << arr2[index2] << std::endl;
+			if (a1[firstArrayIndex] < a2[secondArrayIndex])
+			{
+				extraWorkSpace[i] = a1[firstArrayIndex];
+				firstArrayIndex++;
+			}
+			else
+			{
+				extraWorkSpace[i] = a2[secondArrayIndex];
+				secondArrayIndex++;
+			}
 		}
+	}
+
+	for (int i = 0; i < length; i++)
+	{
+		array1[i] = extraWorkSpace[i];
+	}
+
+	if (x == NULL)
+	{
+		delete[] extraWorkSpace;
 	}
 }
