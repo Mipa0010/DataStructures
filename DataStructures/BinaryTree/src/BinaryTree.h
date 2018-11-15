@@ -1,65 +1,80 @@
 #pragma once
+#include <iostream>
 
-template <typename T> class Node
+template<typename T> class Node
 {
 public:
-	T data;
-	int childCount;
-	Node<T> *children;
+	T data {};
+	Node* left;
+	Node* right;
 
-	Node(T data, int childCount)
+	Node() :
+		data({}), left(nullptr), right(nullptr)
 	{
-		this->data = data;
-		this->childCount = childCount;
-		children = new Node<T>[childCount];
-	};
-
-	~Node()
-	{
-		delete[] children;
 	}
 
-	Node<T> GetLeft()
+	Node(T data) :
+		data(data), left(nullptr), right(nullptr)
+	{
+	}
+
+	Node* GetLeft()
 	{
 		return left;
 	}
 
-	Node<T> GetRight()
+	Node* GetRight()
 	{
 		return right;
 	}
 
-	void SetLeft(Node<T> *l)
+	void SetLeft(Node<T>* node)
 	{
-		left = l;
+		left = node
 	}
 
-	void SetRight(Node<T> *r)
+	void SetRigh(Node<T>* node)
 	{
-		right = r;
-	}
-
-	T &GetData()
-	{
-		retrun data;
+		right = node;
 	}
 };
 
-template <typename T> class BinaryTree
+template<typename T> class BinaryTree
 {
-	Node<T> *root;
-	int childCount;
+public:
+	Node<T>* root;
 
-	BinaryTree(int childCount)
+	BinaryTree() :
+		root(nullptr)
 	{
-		this->childCount = childCount;
 	}
 
-	void Insert(T &data)
+	void Insert(T data)
 	{
-		if (root == NULL)
+		InsertRecursive(root, data);
+	}
+
+	void InsertRecursive(Node<T>* node, T data)
+	{
+		if (node == nullptr)
 		{
-			root = new Node(data, childCount);
+			root = new Node<T>(data);
 		}
 	}
+
+	void PrintTree()
+	{
+		PrintTreeRecursive(root);
+	}
+
+	void PrintTreeRecursive(Node<T> *node)
+	{
+		if (node != nullptr)
+		{
+			std::cout << node->data << std::endl;
+			PrintTreeRecursive(node->left);
+			PrintTreeRecursive(node->right);
+		}
+	}
+	
 };
