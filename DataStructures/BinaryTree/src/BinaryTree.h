@@ -4,7 +4,7 @@
 template<typename T> class Node
 {
 public:
-	T data {};
+	T data;
 	Node* left;
 	Node* right;
 
@@ -16,26 +16,6 @@ public:
 	Node(T data) :
 		data(data), left(nullptr), right(nullptr)
 	{
-	}
-
-	Node* GetLeft()
-	{
-		return left;
-	}
-
-	Node* GetRight()
-	{
-		return right;
-	}
-
-	void SetLeft(Node<T>* node)
-	{
-		left = node
-	}
-
-	void SetRigh(Node<T>* node)
-	{
-		right = node;
 	}
 };
 
@@ -51,30 +31,103 @@ public:
 
 	void Insert(T data)
 	{
-		InsertRecursive(root, data);
-	}
-
-	void InsertRecursive(Node<T>* node, T data)
-	{
-		if (node == nullptr)
+		if (root != nullptr)
+		{
+			Insert(root, data);
+		}
+		else
 		{
 			root = new Node<T>(data);
 		}
 	}
 
-	void PrintTree()
+	void Insert(Node<T>* node, T data)
 	{
-		PrintTreeRecursive(root);
+		if (data < node->data)
+		{
+			if (node->left != nullptr)
+			{
+				Insert(node->left, data);
+			}
+			else
+			{
+				node->left = new Node<T>(data);
+			}
+		}
+		else
+		{
+			if (node->right != nullptr)
+			{
+				Insert(node->right, data);
+			}
+			else
+			{
+				node->right = new Node<T>(data);
+			}
+		}
 	}
 
-	void PrintTreeRecursive(Node<T> *node)
+	Node<T>* Search(T data)
+	{
+		return Search(root, data);
+	}
+
+	Node<T>* Search(Node<T>* node, T data)
+	{
+		if (node != nullptr)
+		{
+			if (data == node->data)
+			{
+				return node;
+			}
+			
+			if (data < node->data)
+			{
+				Search(node->left, data);
+			}
+			else
+			{
+				Search(node->right, data);
+			}
+		}
+		else
+		{
+			return nullptr;
+		}
+	}
+
+	void PrintTree()
+	{
+		PrintTree(root);
+	}
+
+	void PrintTree(Node<T> *node)
 	{
 		if (node != nullptr)
 		{
 			std::cout << node->data << std::endl;
-			PrintTreeRecursive(node->left);
-			PrintTreeRecursive(node->right);
+			PrintTree(node->left);
+			PrintTree(node->right);
 		}
 	}
 	
+	void Clear()
+	{
+		Clear(root);
+		root = nullptr;
+	}
+
+	void Clear(Node<T>* node)
+	{
+		if (node != nullptr)
+		{
+			Clear(node->left);
+			Clear(node->right);
+			delete node;
+		}
+		else
+		{
+			std::cout << "cool" << std::endl;
+		}
+	}
 };
