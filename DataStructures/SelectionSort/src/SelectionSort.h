@@ -1,5 +1,4 @@
 #pragma once
-#include <iostream>
 
 void SelectionSort(int* arr, int count)
 {
@@ -14,8 +13,6 @@ void SelectionSort(int* arr, int count)
 				smallest = j;
 			}
 		}
-
-		//std::cout << smallest << std::endl;
 
 		int tmp = arr[i];
 		arr[i] = arr[smallest];
